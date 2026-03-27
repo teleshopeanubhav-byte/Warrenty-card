@@ -1,0 +1,30 @@
+{
+  "entities": {
+    "Warranty": {
+      "title": "Warranty",
+      "description": "Warranty registration details",
+      "type": "object",
+      "properties": {
+        "customerName": { "type": "string" },
+        "address": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "product": { "type": "string" },
+        "price": { "type": "number" },
+        "brand": { "type": "string" },
+        "serialNumber": { "type": "string" },
+        "warrantyPeriod": { "type": "string" },
+        "purchaseDate": { "type": "string" },
+        "expiryDate": { "type": "string" },
+        "note": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["customerName", "phoneNumber", "product", "serialNumber", "purchaseDate"]
+    }
+  },
+  "firestore": {
+    "/warranties/{warrantyId}": {
+      "schema": "Warranty",
+      "description": "Collection of warranty registrations"
+    }
+  }
+}
